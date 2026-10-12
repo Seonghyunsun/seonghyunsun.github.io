@@ -74,10 +74,43 @@ renderGreeting();
 renderCalendar();
 initReveal();
 
-// ---- Gallery ---- (확대 보기 없음)
+// ---- Gallery ----
 function renderGallery() {
+  const urls = config.gallery;
   $("#gallery").innerHTML = `${title("Gallery", "갤러리")}
-    <div class="grid">${config.gallery.map((u) => `<div class="thumb"><img src="${u}" alt="" loading="lazy" draggable="false" onerror="this.closest('.thumb').style.visibility='hidden'"></div>`).join("")}</div>`;
+    <div class="grid">${urls.map((u, i) => `<button class="thumb" data-i="${i}" aria-label="사진 ${i + 1} 크게 보기"><img src="${u}" alt="" loading="lazy" draggable="false" onerror="this.closest('.thumb').style.visibility='hidden'"></button>`).join("")}</div>
+    <div class="lightbox" id="lightbox" hidden>
+      <button class="lb-close" aria-label="닫기">×</button>
+      <button class="lb-prev" aria-label="이전">‹</button>
+      <img id="lb-img" alt="" draggable="false">
+      <button class="lb-next" aria-label="다음">›</button>
+    </div>`;
+  const lb = $("#lightbox"), img = $("#lb-img");
+  let cur = 0;
+  const show = (i) => { cur = (i + urls.length) % urls.length; img.src = urls[cur]; };
+  const close = () => { lb.hidden = true; };
+  $("#gallery").addEventListener("click", (e) => {
+    const t = e.target.closest(".thumb");
+    if (t) { show(Number(t.dataset.i)); lb.hidden = false; }
+  });
+  lb.querySelector(".lb-close").onclick = close;
+  lb.querySelector(".lb-prev").onclick = () => show(cur - 1);
+  lb.querySelector(".lb-next").onclick = () => show(cur + 1);
+  lb.addEventListener("click", (e) => { if (e.target === lb) close(); });
+  document.addEventListener("keydown", (e) => {
+    if (lb.hidden) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") show(cur - 1);
+    if (e.key === "ArrowRight") show(cur + 1);
+  });
+  let x0 = null;
+  lb.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener("touchend", (e) => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1));
+    x0 = null;
+  });
 }
 
 // ---- Location ----
