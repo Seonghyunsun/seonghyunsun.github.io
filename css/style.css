@@ -12,7 +12,7 @@ body { margin: 0; background: #ece6df; color: var(--ink); font-family: "Noto Ser
 .cover { padding: 56px 28px 64px; text-align: center; }
 .cover .eyebrow { letter-spacing: .35em; font-size: 12px; color: var(--accent); }
 .cover .date-big { font-size: 28px; margin: 8px 0 24px; letter-spacing: .1em; }
-.cover .photo { width: 100%; aspect-ratio: 3/4; background: #e3d9ce; object-fit: cover; display: block; border-radius: 120px 120px 0 0; }
+.cover .photo { width: 100%; aspect-ratio: 3/4; background: #e3d9ce; object-fit: cover; object-position: 50% 40%; display: block; border-radius: 120px 120px 0 0; }
 .cover .names { font-size: 24px; margin: 28px 0 4px; }
 .cover .meta { color: var(--muted); font-size: 14px; margin: 0; }
 .greeting p { margin: 0; }

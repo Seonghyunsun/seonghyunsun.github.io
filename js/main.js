@@ -23,7 +23,7 @@ function renderCover() {
   $("#cover").innerHTML = `
     <div class="eyebrow">SAVE THE DATE</div>
     <div class="date-big">${String(ymd.month + 1).padStart(2, "0")} • ${String(ymd.day).padStart(2, "0")}</div>
-    <img class="photo" src="images/cover.svg" alt="" onerror="this.style.visibility='hidden'">
+    <img class="photo" src="${config.cover}" alt="" onerror="this.style.visibility='hidden'">
     <p class="names">${config.groom.name} ♡ ${config.bride.name}</p>
     <p class="meta">${formatKoreanDate(target)}<br>${config.venue.name} ${config.venue.hall}</p>`;
 }

@@ -10,7 +10,7 @@ node --test tests/            # 날짜·RSVP 검증 테스트
 
 ## 내용 바꾸기
 `js/config.js` 한 곳에서 이름, 일시, 장소, 부모님 성함, 연락처, 계좌, 인사말, 교통편, 갤러리 사진 경로를 바꿉니다.
-사진은 `images/`에 넣고 `config.gallery`와 표지(`images/cover.svg`를 같은 이름의 jpg 등으로 교체 후 `js/main.js`의 경로 수정)에 반영합니다.
+사진은 `images/`에 넣고 `config.cover`(표지)와 `config.gallery`(갤러리)에 경로를 적습니다. 카톡 미리보기 사진은 `index.html`의 `og:image`입니다.
 
 ## 참석 여부를 Google 시트로 받기
 1. 새 Google 시트를 만들고 1행에 `시간, 이름, 참석, 인원, 식사, 메시지`를 적습니다.

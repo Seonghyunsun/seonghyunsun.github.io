@@ -2,6 +2,7 @@
 export const config = {
   groom: { name: "김민혁", father: "", mother: "이경아", phone: "010-5560-6353" },
   bride: { name: "성현선", father: "성락준", mother: "조미숙", phone: "010-5019-0356" },
+  cover: "images/cover.jpg",
   weddingDate: "2027-01-03T12:40:00+09:00",
   venue: {
     name: "루이비스컨벤션 송파문정점",
