@@ -1,4 +1,5 @@
 import { config } from "./config.js";
+import { parentsLine } from "./format.js";
 import { initRsvp } from "./rsvp.js";
 import { buildCalendar, diffParts, formatKoreanDate, seoulYMD, daysUntil } from "./date-utils.js";
 
@@ -31,8 +32,8 @@ function renderGreeting() {
   const { groom, bride } = config;
   $("#greeting").innerHTML = `${title("Invitation", "모시는 말씀")}
     <div class="greeting">${config.greeting.map((l) => `<p>${l}</p>`).join("")}</div>
-    <p class="parents">${groom.father} · ${groom.mother}의 아들 <b>${groom.name}</b><br>
-    ${bride.father} · ${bride.mother}의 딸 <b>${bride.name}</b></p>
+    <p class="parents">${parentsLine(groom, "아들")} <b>${groom.name}</b><br>
+    ${parentsLine(bride, "딸")} <b>${bride.name}</b></p>
     <p><a class="btn" href="tel:${groom.phone}">신랑에게 연락</a> <a class="btn" href="tel:${bride.phone}">신부에게 연락</a></p>`;
 }
 
@@ -155,11 +156,11 @@ document.addEventListener("rsvp:done", () => toast("참석 여부가 전달되�
 // ---- Account ----
 function renderAccount() {
   const block = (label, list) => `<details><summary>${label}</summary>${list.map((a) => `
-    <div class="acct"><span>${a.bank} ${a.number}<br><small>예금주 ${a.holder}</small></span>
+    <div class="acct"><span>${[a.bank, a.number].filter(Boolean).join(" ")}<br><small>예금주 ${a.holder}</small></span>
     <button class="btn" data-copy="${a.number}">복사</button></div>`).join("")}</details>`;
   $("#account").innerHTML = `${title("Account", "마음 전하실 곳")}
     <p>참석이 어려우신 분들은<br>축하의 마음을 전달해 주세요.</p>
-    ${block("신랑측 계좌번호", config.accounts.groom)}${block("신부측 계좌번호", config.accounts.bride)}`;
+    ${config.accounts.groom.length ? block("신랑측 계좌번호", config.accounts.groom) : ""}${config.accounts.bride.length ? block("신부측 계좌번호", config.accounts.bride) : ""}`;
   $("#account").addEventListener("click", async (e) => {
     const b = e.target.closest("[data-copy]");
     if (b) toast((await copyText(b.dataset.copy)) ? "계좌번호를 복사했어요" : "복사하지 못했어요");

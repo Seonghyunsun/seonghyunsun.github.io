@@ -1,7 +1,7 @@
 // 청첩장에 표시되는 모든 개인 정보. 샘플 값은 이곳에서 교체한다.
 export const config = {
-  groom: { name: "김민혁", father: "김아빠", mother: "김엄마", phone: "010-0000-0000" },
-  bride: { name: "성현선", father: "성아빠", mother: "성엄마", phone: "010-0000-0000" },
+  groom: { name: "김민혁", father: "", mother: "이경아", phone: "010-5560-6353" },
+  bride: { name: "성현선", father: "성락준", mother: "조미숙", phone: "010-5019-0356" },
   weddingDate: "2027-01-03T12:40:00+09:00",
   venue: {
     name: "루이비스컨벤션 송파문정점",
@@ -21,8 +21,8 @@ export const config = {
   ],
   gallery: ["images/1.svg", "images/2.svg", "images/3.svg", "images/4.svg", "images/5.svg", "images/6.svg"],
   accounts: {
-    groom: [{ bank: "은행명", number: "000-0000-0000", holder: "김민혁" }],
-    bride: [{ bank: "은행명", number: "000-0000-0000", holder: "성현선" }],
+    groom: [], // 신랑 계좌: { bank: "은행명", number: "계좌번호", holder: "김민혁" } 형식으로 추가
+    bride: [{ bank: "", number: "3333-29-5300712", holder: "성현선" }],
   },
   rsvpUrl: "",
 };
