@@ -5,7 +5,7 @@ export const config = {
   cover: "images/cover.jpg",
   weddingDate: "2027-01-03T12:40:00+09:00",
   venue: {
-    name: "루이비스컨벤션 송파문정점",
+    name: "루이비스컨벤션 송파문정",
     hall: "B1층",
     address: "서울특별시 송파구 법원로9길 26 H비즈니스파크 D동",
     transport: [

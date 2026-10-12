@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="560 330 1090 990" role="img" aria-label="루이비스컨벤션 송파문정점 약도: 문정역 4번 출구 앞에서 셔틀버스를 타고 C/D동 주차장 입구에서 내립니다">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="560 330 1090 990" role="img" aria-label="루이비스컨벤션 송파문정 약도: 문정역 4번 출구 앞에서 셔틀버스를 타고 C/D동 주차장 입구에서 내립니다">
   <defs>
     <clipPath id="mapclip"><rect x="560" y="330" width="1090" height="690" rx="36"/></clipPath>
   </defs>
@@ -82,7 +82,7 @@
     <path d="M752 780 L770 806 L788 780 Z" fill="#fff" stroke="#b08968" stroke-width="4" stroke-linejoin="round"/>
     <rect x="750" y="776" width="40" height="8" fill="#fff"/>
     <text class="nostroke" x="780" y="739" text-anchor="middle" style="font-size:34px;font-weight:700;stroke:none">루이비스컨벤션</text>
-    <text class="nostroke" x="780" y="768" text-anchor="middle" style="font-size:25px;fill:#8a7f78;stroke:none">송파문정점 · B1층</text>
+    <text class="nostroke" x="780" y="768" text-anchor="middle" style="font-size:25px;fill:#8a7f78;stroke:none">송파문정 · B1층</text>
     <!-- C/D동 주차장 입구 (셔틀 하차) -->
     <circle cx="610" cy="812" r="19" fill="#c0615a" stroke="#fff" stroke-width="4"/>
     <text class="nostroke" x="610" y="821" text-anchor="middle" style="font-size:24px;font-weight:700;fill:#fff;stroke:none">P</text>
