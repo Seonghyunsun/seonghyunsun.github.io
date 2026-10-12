@@ -56,5 +56,5 @@ export const config = {
     groom: [{ bank: "우리은행", number: "1002-452-957269", holder: "김민혁" }],
     bride: [{ bank: "카카오뱅크", number: "3333-29-5300712", holder: "성현선" }],
   },
-  rsvpUrl: "",
+  rsvpUrl: "https://script.google.com/macros/s/AKfycbxrs8PvDjwxBDEUM4sGUlGBi9Txuw91V95BUwwt0jDvso5ZNfXScIKJfODws7E5zqkdIQ/exec",
 };
