@@ -136,8 +136,8 @@ function renderLocation() {
   const v = config.venue, q = encodeURIComponent(v.address);
   $("#location").innerHTML = `${title("Location", "오시는 길")}
     <p><b>${v.name}</b> ${v.hall}<br>${v.address}</p>
-    <p><button class="btn" id="copy-addr">주소 복사</button></p>
     <p class="maps">
+      <button class="btn" id="copy-addr">주소 복사</button>
       <a class="btn" target="_blank" rel="noopener" href="https://map.kakao.com/link/search/${q}">카카오맵</a>
       <a class="btn" target="_blank" rel="noopener" href="https://map.naver.com/p/search/${q}">네이버지도</a>
       <a class="btn" target="_blank" rel="noopener" href="https://tmap.life/">티맵</a>

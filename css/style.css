@@ -40,8 +40,8 @@ body { margin: 0; background: #ece6df; color: var(--ink); font-family: "Noto Ser
 .lightbox img { max-width: 100%; max-height: 82vh; touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
 .lightbox button { position: absolute; background: none; border: 0; color: #fff; font-size: 40px; cursor: pointer; padding: 12px 18px; }
 .lb-close { top: 8px; right: 8px; } .lb-prev { left: 0; } .lb-next { right: 0; }
-.maps { display: flex; gap: 6px; justify-content: center; flex-wrap: nowrap; }
-.maps .btn { flex: 1 1 0; min-width: 0; padding: 9px 0; font-size: 13px; white-space: nowrap; text-align: center; }
+.maps { display: flex; gap: 4px; justify-content: center; flex-wrap: nowrap; }
+.maps .btn { flex: 1 1 0; min-width: 0; padding: 9px 0; font-size: 12px; white-space: nowrap; text-align: center; }
 .transport { text-align: left; margin: 28px 0 0; font-size: 14px; }
 .transport dt { font-weight: 700; margin-top: 12px; color: var(--accent); }
 .transport dd { margin: 0; color: var(--muted); }
