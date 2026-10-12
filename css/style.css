@@ -47,7 +47,9 @@ body { margin: 0; background: #ece6df; color: var(--ink); font-family: "Noto Ser
 .transport { text-align: left; font-size: 14px; }
 .transport h3 { margin: 24px 0 6px; font-size: 15px; font-weight: 700; color: var(--accent); }
 .transport h3 small { font-weight: 400; font-size: 12px; color: var(--muted); }
+.transport .t-body { margin-left: 4px; padding-left: 14px; border-left: 2px solid var(--line); }
 .transport p { margin: 0 0 4px; }
+.transport dt:first-child { margin-top: 0; }
 .transport dl { margin: 0; }
 .transport dt { margin-top: 8px; font-size: 12px; color: var(--muted); }
 .transport dd { margin: 0; }
