@@ -70,3 +70,78 @@ renderCover();
 renderGreeting();
 renderCalendar();
 initReveal();
+
+// ---- Gallery ----
+function renderGallery() {
+  const urls = config.gallery;
+  $("#gallery").innerHTML = `${title("Gallery", "갤러리")}
+    <div class="grid">${urls.map((u, i) => `<button class="thumb" data-i="${i}" aria-label="사진 ${i + 1} 크게 보기"><img src="${u}" alt="" loading="lazy" onerror="this.closest('.thumb').style.visibility='hidden'"></button>`).join("")}</div>
+    <div class="lightbox" id="lightbox" hidden>
+      <button class="lb-close" aria-label="닫기">×</button>
+      <button class="lb-prev" aria-label="이전">‹</button>
+      <img id="lb-img" alt="">
+      <button class="lb-next" aria-label="다음">›</button>
+    </div>`;
+  const lb = $("#lightbox"), img = $("#lb-img");
+  let cur = 0;
+  const show = (i) => { cur = (i + urls.length) % urls.length; img.src = urls[cur]; };
+  const close = () => { lb.hidden = true; };
+  $("#gallery").addEventListener("click", (e) => {
+    const t = e.target.closest(".thumb");
+    if (t) { show(Number(t.dataset.i)); lb.hidden = false; }
+  });
+  lb.querySelector(".lb-close").onclick = close;
+  lb.querySelector(".lb-prev").onclick = () => show(cur - 1);
+  lb.querySelector(".lb-next").onclick = () => show(cur + 1);
+  lb.addEventListener("click", (e) => { if (e.target === lb) close(); });
+  document.addEventListener("keydown", (e) => {
+    if (lb.hidden) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") show(cur - 1);
+    if (e.key === "ArrowRight") show(cur + 1);
+  });
+  let x0 = null;
+  lb.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener("touchend", (e) => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1));
+    x0 = null;
+  });
+}
+
+// ---- Location ----
+export async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try { ok = document.execCommand("copy"); } catch { ok = false; }
+    ta.remove();
+    return ok;
+  }
+}
+
+function renderLocation() {
+  const v = config.venue, q = encodeURIComponent(v.address);
+  $("#location").innerHTML = `${title("Location", "오시는 길")}
+    <p><b>${v.name}</b> ${v.hall}<br>${v.address}</p>
+    <p><button class="btn" id="copy-addr">주소 복사</button></p>
+    <p class="maps">
+      <a class="btn" target="_blank" rel="noopener" href="https://map.kakao.com/link/search/${q}">카카오맵</a>
+      <a class="btn" target="_blank" rel="noopener" href="https://map.naver.com/p/search/${q}">네이버지도</a>
+      <a class="btn" target="_blank" rel="noopener" href="https://tmap.life/">티맵</a>
+    </p>
+    <dl class="transport">${v.transport.map(([k, t]) => `<dt>${k}</dt><dd>${t}</dd>`).join("")}</dl>`;
+  $("#copy-addr").onclick = async () => toast((await copyText(v.address)) ? "주소를 복사했어요" : "복사하지 못했어요. 직접 선택해 주세요");
+}
+
+renderGallery();
+renderLocation();
