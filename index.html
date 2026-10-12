@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>김민혁 · 성현선 결혼합니다</title>
   <meta property="og:title" content="김민혁 · 성현선 결혼합니다">
   <meta property="og:description" content="2027년 1월 3일 일요일 오후 12시 40분">
@@ -21,6 +21,10 @@
   <footer id="footer" class="sec reveal"></footer>
 </main>
 <div id="toast" class="toast" role="status"></div>
+<script>
+  // iOS Safari는 user-scalable=no를 무시하므로 핀치 제스처를 직접 막는다.
+  ["gesturestart", "gesturechange"].forEach((t) => document.addEventListener(t, (e) => e.preventDefault()));
+</script>
 <script type="module" src="js/main.js"></script>
 </body>
 </html>

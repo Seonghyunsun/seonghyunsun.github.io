@@ -2,6 +2,7 @@
   --bg: #fbf8f4; --ink: #3a3330; --muted: #8a7f78; --accent: #b08968; --line: #e8dfd6;
 }
 * { box-sizing: border-box; }
+html { touch-action: manipulation; }
 body { margin: 0; background: #ece6df; color: var(--ink); font-family: "Noto Serif KR", "Apple SD Gothic Neo", serif; line-height: 1.8; }
 .wrap { max-width: 480px; margin: 0 auto; background: var(--bg); min-height: 100vh; overflow: hidden; }
 .sec { padding: 64px 28px; text-align: center; border-top: 1px solid var(--line); }
@@ -31,14 +32,9 @@ body { margin: 0; background: #ece6df; color: var(--ink); font-family: "Noto Ser
 .countdown span { font-size: 11px; color: var(--muted); letter-spacing: .1em; }
 .toast { position: fixed; left: 50%; bottom: 32px; transform: translate(-50%, 20px); background: rgba(40,34,30,.9); color: #fff; padding: 10px 20px; border-radius: 999px; font-size: 14px; opacity: 0; pointer-events: none; transition: .3s; z-index: 50; }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
-.thumb { padding: 0; border: 0; background: #e3d9ce; aspect-ratio: 1; cursor: pointer; overflow: hidden; }
-.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.lightbox { position: fixed; inset: 0; background: rgba(20,16,14,.94); z-index: 40; display: flex; align-items: center; justify-content: center; }
-.lightbox[hidden] { display: none; }
-.lightbox img { max-width: 100%; max-height: 82vh; }
-.lightbox button { position: absolute; background: none; border: 0; color: #fff; font-size: 40px; cursor: pointer; padding: 12px 18px; }
-.lb-close { top: 8px; right: 8px; } .lb-prev { left: 0; } .lb-next { right: 0; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+.thumb { background: #e3d9ce; aspect-ratio: 2/3; overflow: hidden; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; -webkit-user-select: none; user-select: none; }
 .maps { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
 .transport { text-align: left; margin: 28px 0 0; font-size: 14px; }
 .transport dt { font-weight: 700; margin-top: 12px; color: var(--accent); }
