@@ -142,7 +142,14 @@ function renderLocation() {
       <a class="btn" target="_blank" rel="noopener" href="https://map.naver.com/p/search/${q}">네이버지도</a>
       <a class="btn" target="_blank" rel="noopener" href="https://tmap.life/">티맵</a>
     </p>
-    <dl class="transport">${v.transport.map(([k, t]) => `<dt>${k}</dt><dd>${t}</dd>`).join("")}</dl>`;
+    <img class="venue-map" src="images/venue-map.svg" alt="루이비스컨벤션 약도: 문정역 4번 출구에서 셔틀버스, 수서역 방면은 도보·차량으로 이동" draggable="false">
+    <p class="map-note">※ 실제 축척과 다른 약도입니다.</p>
+    <div class="transport">${v.transport.map((g) => `
+      <h3>${g.title}${g.sub ? ` <small>${g.sub}</small>` : ""}</h3>
+      ${(g.lines || []).map((l) => `<p>${l}</p>`).join("")}
+      ${g.rows ? `<dl>${g.rows.map(([k, t]) => `<dt>${k}</dt><dd>${t}</dd>`).join("")}</dl>` : ""}
+      ${g.warn ? `<p class="warn">※ ${g.warn}</p>` : ""}`).join("")}</div>
+    <p class="tel">예식장 문의 <a href="tel:${v.tel}">${v.tel}</a></p>`;
   $("#copy-addr").onclick = async () => toast((await copyText(v.address)) ? "주소를 복사했어요" : "복사하지 못했어요. 직접 선택해 주세요");
 }
 
