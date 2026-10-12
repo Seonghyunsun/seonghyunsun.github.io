@@ -33,3 +33,9 @@ export function formatKoreanDate(d) {
   const h12 = h % 12 === 0 ? 12 : h % 12;
   return `${p.year}년 ${p.month}월 ${p.day}일 ${p.weekday} ${period} ${h12}시 ${p.minute}분`;
 }
+
+export function seoulYMD(d) {
+  const [year, month, day] = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Seoul" })
+    .format(d).split("-").map(Number);
+  return { year, month: month - 1, day };
+}

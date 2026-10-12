@@ -21,3 +21,8 @@ test("diffParts: after target is past with zeros", () => {
 test("formatKoreanDate: wedding date", () => {
   assert.equal(formatKoreanDate(new Date("2027-01-03T12:40:00+09:00")), "2027년 1월 3일 일요일 오후 12시 40분");
 });
+
+import { seoulYMD } from "../js/date-utils.js";
+test("seoulYMD: KST date regardless of runtime timezone", () => {
+  assert.deepEqual(seoulYMD(new Date("2027-01-03T00:10:00+09:00")), { year: 2027, month: 0, day: 3 });
+});
