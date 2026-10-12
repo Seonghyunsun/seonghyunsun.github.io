@@ -43,10 +43,7 @@ body { margin: 0; background: #ece6df; color: var(--ink); font-family: "Noto Ser
 .maps { display: flex; gap: 4px; justify-content: center; flex-wrap: nowrap; }
 .maps .btn { flex: 1 1 0; min-width: 0; padding: 9px 0; font-size: 12px; white-space: nowrap; text-align: center; }
 .venue-map { width: 100%; height: auto; display: block; margin: 28px 0 6px; border-radius: 16px; -webkit-user-select: none; user-select: none; }
-.map-note { margin: 0 0 8px; font-size: 12px; color: var(--muted); }
-.map-sub { margin: 28px 0 8px; font-size: 15px; font-weight: 700; color: var(--accent); }
-.map-sub small { display: block; margin-top: 2px; font-size: 12px; font-weight: 400; color: var(--muted); }
-.venue-map.detail { margin: 0 0 28px; }
+.map-note { margin: 0 0 28px; font-size: 12px; color: var(--muted); }
 .transport { text-align: left; font-size: 14px; }
 .transport h3 { margin: 24px 0 6px; font-size: 15px; font-weight: 700; color: var(--accent); }
 .transport h3 small { font-weight: 400; font-size: 12px; color: var(--muted); }

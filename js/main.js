@@ -144,8 +144,6 @@ function renderLocation() {
     </p>
     <img class="venue-map" src="images/venue-map.svg" alt="루이비스컨벤션 약도: 문정역 4번 출구 앞에서 셔틀버스를 타고 C/D동 주차장 입구에서 내립니다" draggable="false">
     <p class="map-note">※ 실제 축척과 다른 약도입니다.</p>
-    <p class="map-sub">예식장 건물 <small>H비즈니스파크 · D동이 루이비스컨벤션입니다</small></p>
-    <img class="venue-map detail" src="images/venue-detail.svg" alt="H비즈니스파크 상세 약도: 정의로 쪽 C/D동 주차장 입구, C동, D동(루이비스컨벤션 웨딩홀)" draggable="false">
     <div class="transport">${v.transport.map((g) => `
       <h3>${g.title}${g.sub ? ` <small>${g.sub}</small>` : ""}</h3>
       ${(g.lines || []).map((l) => `<p>${l}</p>`).join("")}
