@@ -43,7 +43,7 @@ export const config = {
     "images/gallery-22.jpg",
   ],
   accounts: {
-    groom: [], // 신랑 계좌: { bank: "은행명", number: "계좌번호", holder: "김민혁" } 형식으로 추가
+    groom: [{ bank: "우리은행", number: "1002-452-957269", holder: "김민혁" }],
     bride: [{ bank: "카카오뱅크", number: "3333-29-5300712", holder: "성현선" }],
   },
   rsvpUrl: "",
