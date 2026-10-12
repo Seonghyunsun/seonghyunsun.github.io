@@ -39,3 +39,8 @@ export function seoulYMD(d) {
     .format(d).split("-").map(Number);
   return { year, month: month - 1, day };
 }
+
+export function daysUntil(target, now) {
+  const a = seoulYMD(target), b = seoulYMD(now);
+  return Math.round((Date.UTC(a.year, a.month, a.day) - Date.UTC(b.year, b.month, b.day)) / 86400000);
+}

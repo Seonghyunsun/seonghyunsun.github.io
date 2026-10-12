@@ -1,8 +1,12 @@
 export function validateRsvp(d) {
   if (!d.name || !d.name.trim()) return { ok: false, error: "성함을 입력해 주세요." };
   if (d.attend !== "yes" && d.attend !== "no") return { ok: false, error: "참석 여부를 선택해 주세요." };
-  if (d.attend === "yes" && !(Number(d.count) >= 1)) return { ok: false, error: "참석 인원을 입력해 주세요." };
+  if (d.attend === "yes" && !(Number(d.count) >= 1 && Number(d.count) <= 10)) return { ok: false, error: "참석 인원은 1~10명으로 입력해 주세요." };
   return { ok: true };
+}
+
+export function normalizeRsvp(d) {
+  return d.attend === "no" ? { ...d, count: 0, meal: "" } : d;
 }
 
 export function initRsvp(root, url) {
@@ -52,10 +56,10 @@ export function initRsvp(root, url) {
     e.preventDefault();
     if (sending || !url) return;
     const fd = new FormData(form);
-    const data = {
+    const data = normalizeRsvp({
       name: (fd.get("name") || "").trim(), attend: fd.get("attend") || "",
       count: Number(fd.get("count")) || 0, meal: fd.get("meal") || "", message: (fd.get("message") || "").trim(),
-    };
+    });
     const v = validateRsvp(data);
     if (!v.ok) { msg.textContent = v.error; return; }
     sending = true; submit.disabled = true; msg.textContent = "전달 중입니다...";

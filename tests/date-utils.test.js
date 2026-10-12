@@ -26,3 +26,13 @@ import { seoulYMD } from "../js/date-utils.js";
 test("seoulYMD: KST date regardless of runtime timezone", () => {
   assert.deepEqual(seoulYMD(new Date("2027-01-03T00:10:00+09:00")), { year: 2027, month: 0, day: 3 });
 });
+
+import { daysUntil } from "../js/date-utils.js";
+const T = new Date("2027-01-03T12:40:00+09:00");
+test("daysUntil: calendar days in Seoul, not elapsed 24h blocks", () => {
+  assert.equal(daysUntil(T, new Date("2027-01-01T15:00:00+09:00")), 2);
+  assert.equal(daysUntil(T, new Date("2027-01-02T13:00:00+09:00")), 1);
+  assert.equal(daysUntil(T, new Date("2027-01-03T00:05:00+09:00")), 0);
+  assert.equal(daysUntil(T, new Date("2027-01-03T18:00:00+09:00")), 0);
+  assert.equal(daysUntil(T, new Date("2027-01-04T09:00:00+09:00")), -1);
+});

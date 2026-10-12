@@ -1,6 +1,6 @@
 import { config } from "./config.js";
 import { initRsvp } from "./rsvp.js";
-import { buildCalendar, diffParts, formatKoreanDate, seoulYMD } from "./date-utils.js";
+import { buildCalendar, diffParts, formatKoreanDate, seoulYMD, daysUntil } from "./date-utils.js";
 
 const $ = (s) => document.querySelector(s);
 const target = new Date(config.weddingDate);
@@ -50,9 +50,10 @@ function renderCalendar() {
     const r = diffParts(target, new Date());
     $("#countdown").innerHTML = r.past ? "" : [["DAYS", r.days], ["HOUR", r.hours], ["MIN", r.minutes], ["SEC", r.seconds]]
       .map(([l, v]) => `<div><b>${String(v).padStart(2, "0")}</b><span>${l}</span></div>`).join("");
-    $("#dday-text").textContent = r.past
+    const n = daysUntil(target, new Date());
+    $("#dday-text").textContent = n < 0
       ? "결혼식이 지났습니다. 함께해 주셔서 감사합니다."
-      : r.days === 0 ? "오늘은 D-Day입니다." : `${config.groom.name}, ${config.bride.name}의 결혼식이 ${r.days}일 남았습니다.`;
+      : n === 0 ? "오늘은 D-Day입니다." : `${config.groom.name}, ${config.bride.name}의 결혼식이 ${n}일 남았습니다.`;
   };
   tick();
   setInterval(tick, 1000);
