@@ -1,4 +1,5 @@
 import { config } from "./config.js";
+import { initRsvp } from "./rsvp.js";
 import { buildCalendar, diffParts, formatKoreanDate, seoulYMD } from "./date-utils.js";
 
 const $ = (s) => document.querySelector(s);
@@ -145,3 +146,38 @@ function renderLocation() {
 
 renderGallery();
 renderLocation();
+
+// ---- Notice (RSVP only) ----
+initRsvp($("#notice"), config.rsvpUrl);
+document.addEventListener("rsvp:done", () => toast("참석 여부가 전달되었습니다. 감사합니다!"));
+
+// ---- Account ----
+function renderAccount() {
+  const block = (label, list) => `<details><summary>${label}</summary>${list.map((a) => `
+    <div class="acct"><span>${a.bank} ${a.number}<br><small>예금주 ${a.holder}</small></span>
+    <button class="btn" data-copy="${a.number}">복사</button></div>`).join("")}</details>`;
+  $("#account").innerHTML = `${title("Account", "마음 전하실 곳")}
+    <p>참석이 어려우신 분들은<br>축하의 마음을 전달해 주세요.</p>
+    ${block("신랑측 계좌번호", config.accounts.groom)}${block("신부측 계좌번호", config.accounts.bride)}`;
+  $("#account").addEventListener("click", async (e) => {
+    const b = e.target.closest("[data-copy]");
+    if (b) toast((await copyText(b.dataset.copy)) ? "계좌번호를 복사했어요" : "복사하지 못했어요");
+  });
+}
+
+// ---- Footer ----
+function renderFooter() {
+  $("#footer").innerHTML = `<p><button class="btn solid" id="share">청첩장 공유하기</button>
+    <button class="btn" id="copy-link">링크 복사하기</button></p>
+    <p class="meta">${config.groom.name} ♡ ${config.bride.name}</p>`;
+  const copy = async () => toast((await copyText(location.href)) ? "링크를 복사했어요" : "복사하지 못했어요");
+  $("#copy-link").onclick = copy;
+  $("#share").onclick = async () => {
+    if (navigator.share) {
+      try { await navigator.share({ title: document.title, url: location.href }); } catch { /* 사용자 취소 */ }
+    } else copy();
+  };
+}
+
+renderAccount();
+renderFooter();
