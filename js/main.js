@@ -148,8 +148,7 @@ function renderLocation() {
       <h3>${g.title}${g.sub ? ` <small>${g.sub}</small>` : ""}</h3>
       ${(g.lines || []).map((l) => `<p>${l}</p>`).join("")}
       ${g.rows ? `<dl>${g.rows.map(([k, t]) => `<dt>${k}</dt><dd>${t}</dd>`).join("")}</dl>` : ""}
-      ${g.warn ? `<p class="warn">※ ${g.warn}</p>` : ""}`).join("")}</div>
-    <p class="tel">예식장 문의 <a href="tel:${v.tel}">${v.tel}</a></p>`;
+      ${g.warn ? `<p class="warn">※ ${g.warn}</p>` : ""}`).join("")}</div>`;
   $("#copy-addr").onclick = async () => toast((await copyText(v.address)) ? "주소를 복사했어요" : "복사하지 못했어요. 직접 선택해 주세요");
 }
 

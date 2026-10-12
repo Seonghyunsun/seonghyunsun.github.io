@@ -52,8 +52,6 @@ body { margin: 0; background: #ece6df; color: var(--ink); font-family: "Noto Ser
 .transport dt { margin-top: 8px; font-size: 12px; color: var(--muted); }
 .transport dd { margin: 0; }
 .transport .warn { color: #c0615a; font-weight: 700; font-size: 13px; }
-.tel { margin: 28px 0 0; font-size: 14px; color: var(--muted); }
-.tel a { color: var(--ink); }
 .modal { position: fixed; inset: 0; background: rgba(20,16,14,.6); z-index: 30; display: flex; align-items: center; justify-content: center; padding: 16px; }
 .modal[hidden] { display: none; }
 .modal-card { background: var(--bg); width: 100%; max-width: 420px; max-height: 92vh; overflow: auto; border-radius: 16px; padding: 24px; text-align: left; }

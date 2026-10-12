@@ -1,87 +1,107 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 330" role="img" aria-label="루이비스컨벤션 송파문정점 약도">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="10 30 790 700" role="img" aria-label="루이비스컨벤션 송파문정점 약도: 문정역 4번 출구 바로 앞 지상에서 셔틀버스를 탑니다">
   <style>
-    text { font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif; fill: #3a3330; }
-    .lm { font-size: 8px; fill: #9a8f87; }
-    .st { font-size: 10px; font-weight: 700; }
-    .sub { font-size: 7px; fill: #8a7f78; }
+    text { font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif; fill: #3a3330; paint-order: stroke; stroke: #faf6f1; stroke-width: 5px; stroke-linejoin: round; }
+    .lm { font-size: 21px; fill: #8a7f78; }
+    .st { font-size: 28px; font-weight: 700; }
+    .nostroke { stroke: none; }
   </style>
-  <rect width="360" height="330" rx="16" fill="#f3ece4"/>
+  <rect x="10" y="30" width="790" height="700" rx="26" fill="#faf6f1"/>
 
-  <!-- 도로 -->
-  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M16 112 H346" stroke-width="9"/>
-    <path d="M30 205 H334" stroke-width="9"/>
-    <path d="M205 40 V288" stroke-width="9"/>
-    <path d="M262 98 L320 262" stroke-width="13"/>
-    <path d="M150 52 V112" stroke-width="6"/>
+  <!-- 도로 (회색 띠) -->
+  <g fill="none" stroke="#dcd3c9" stroke-linejoin="round">
+    <path d="M555 45 L760 515" stroke-width="24"/>
+    <path d="M195 163 L548 52" stroke-width="15"/>
+    <path d="M458 105 L522 242" stroke-width="13"/>
+    <path d="M395 548 L765 512" stroke-width="15"/>
+    <path d="M118 535 L322 502" stroke-width="13"/>
+    <path d="M560 342 L738 300" stroke-width="13"/>
+    <path d="M40 208 L198 200 L305 330 L335 485 L555 342 L515 243 L612 214" stroke-width="15"/>
   </g>
 
   <!-- 동부간선도로 -->
-  <path d="M56 46 L134 296" stroke="#cdc3b8" stroke-width="17" stroke-linecap="round" fill="none"/>
-  <path d="M65 46 L143 296" stroke="#bcd8e8" stroke-width="5" stroke-linecap="round" fill="none"/>
-  <text transform="translate(86 150) rotate(72.6)" font-size="8" style="fill:#fff;font-size:8px;letter-spacing:2px">동부간선도로</text>
+  <path d="M150 128 L330 560" stroke="#8f857c" stroke-width="36" fill="none"/>
+  <path d="M170 122 L350 554" stroke="#9cc9e4" stroke-width="9" fill="none"/>
+  <text class="nostroke" transform="translate(222 300) rotate(67.4)" style="font-size:21px;fill:#fff;stroke:none;letter-spacing:6px;font-weight:700" text-anchor="middle">동 부 간 선 도 로</text>
+
+  <!-- 이동 경로: 수서역 → 주차장 입구 → 4번 출구 셔틀 타는 곳 -->
+  <path d="M40 208 L198 200 L305 330 L335 485 L555 342 L515 243 L612 214" fill="none" stroke="#7b3f8c" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="612" cy="214" r="7" fill="#7b3f8c"/>
 
   <!-- 주변 지명 -->
-  <text class="lm" x="150" y="38" text-anchor="middle">가락시장</text>
-  <text class="lm" x="134" y="100" text-anchor="middle">올림픽훼밀리타운</text>
-  <text class="lm" x="176" y="86" text-anchor="middle">훼밀리타운사거리</text>
-  <text class="lm" x="318" y="38" text-anchor="middle">문정동 로데오거리</text>
-  <text class="lm" x="224" y="222" text-anchor="middle">문정동 법조타운</text>
-  <text class="lm" x="150" y="224" text-anchor="middle">서울동부지방검찰청</text>
-  <text class="lm" x="262" y="242" text-anchor="middle">서울동부지방법원</text>
-  <text class="lm" x="244" y="262" text-anchor="middle">하비오푸르지오</text>
-  <text class="lm" x="226" y="284" text-anchor="middle">가든파이브</text>
-  <text class="lm" x="20" y="132">이마트</text>
+  <text class="lm" x="360" y="92" text-anchor="middle">가락시장</text>
+  <text class="lm" x="326" y="148" text-anchor="middle">올림픽</text>
+  <text class="lm" x="326" y="172" text-anchor="middle">훼밀리타운</text>
+  <text class="lm" x="448" y="150" text-anchor="middle">올림픽훼밀리</text>
+  <text class="lm" x="448" y="174" text-anchor="middle">타운사거리</text>
+  <text class="lm" x="716" y="112" text-anchor="middle">문정동</text>
+  <text class="lm" x="716" y="136" text-anchor="middle">로데오거리</text>
+  <text class="lm" x="124" y="150" text-anchor="middle">이마트</text>
+  <rect x="119" y="158" width="10" height="10" fill="#3a3330"/>
+  <text class="lm" x="476" y="322" text-anchor="middle">문정동</text>
+  <text class="lm" x="476" y="346" text-anchor="middle">법조타운</text>
+  <text class="lm" x="410" y="392" text-anchor="middle">서울동부지방검찰청</text>
+  <rect x="405" y="402" width="10" height="10" fill="#3a3330"/>
+  <text class="lm" x="604" y="384" text-anchor="middle">서울동부지방법원</text>
+  <rect x="520" y="372" width="10" height="10" fill="#3a3330"/>
+  <text class="lm" x="636" y="440" text-anchor="middle">하비오푸르지오</text>
+  <rect x="574" y="486" width="10" height="10" fill="#3a3330"/>
+  <text class="lm" x="640" y="500" text-anchor="middle">가든파이브</text>
+  <text class="lm" x="128" y="304" text-anchor="middle">SRT 수서역</text>
 
-  <!-- 경로: 수서역 방면 (도보·차량) -->
-  <path d="M52 70 H84 L141 174" fill="none" stroke="#3a3330" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- 경로: 문정역 4번출구 셔틀 -->
-  <path d="M264 130 H240 V183 H194" fill="none" stroke="#b08968" stroke-width="2.8" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <!-- 수서역 -->
-  <circle cx="36" cy="70" r="10" fill="#ef7c1c"/>
-  <text x="36" y="74" text-anchor="middle" style="fill:#fff;font-size:11px;font-weight:700">3</text>
-  <text class="st" x="36" y="91" text-anchor="middle">수서역</text>
-  <text class="sub" x="36" y="100" text-anchor="middle">3호선·SRT</text>
-
-  <!-- 문정역 -->
-  <circle cx="276" cy="130" r="10" fill="#d6006d"/>
-  <text x="276" y="134" text-anchor="middle" style="fill:#fff;font-size:11px;font-weight:700">8</text>
-  <text class="st" x="291" y="146" style="font-size:11px;fill:#d6006d">문정역</text>
-  <rect x="262" y="98" width="34" height="14" rx="7" fill="#fff" stroke="#d6006d" stroke-width="1"/>
-  <text x="279" y="108" text-anchor="middle" style="font-size:8px;font-weight:700;fill:#d6006d">4번 출구</text>
-
-  <!-- 셔틀 타는 곳 -->
-  <rect x="238" y="52" width="82" height="20" rx="10" fill="#ffe14d"/>
-  <text x="279" y="66" text-anchor="middle" style="font-size:9.5px;font-weight:700">셔틀 타는 곳</text>
-  <path d="M279 72 V98" stroke="#e0b800" stroke-width="1.2" stroke-dasharray="2 2"/>
-
-  <!-- 장지역 -->
-  <circle cx="318" cy="244" r="9" fill="#d6006d"/>
-  <text x="318" y="248" text-anchor="middle" style="fill:#fff;font-size:10px;font-weight:700">8</text>
-  <text class="st" x="318" y="264" text-anchor="middle" style="font-size:9px">장지역</text>
-
-  <!-- 주차장 입구 -->
-  <circle cx="139" cy="180" r="7.5" fill="#c0615a"/>
-  <text x="139" y="183.5" text-anchor="middle" style="fill:#fff;font-size:9px;font-weight:700">P</text>
-  <text x="121" y="199" style="font-size:7.5px;font-weight:700;fill:#c0615a">주차장 입구</text>
+  <!-- 수서역 (3호선) -->
+  <circle cx="70" cy="190" r="18" fill="#fff" stroke="#ef7c1c" stroke-width="4"/>
+  <text class="nostroke" x="70" y="199" text-anchor="middle" style="font-size:24px;font-weight:700;fill:#ef7c1c;stroke:none">3</text>
+  <text class="st" x="70" y="236" text-anchor="middle" style="fill:#ef7c1c">수서역</text>
+  <text class="lm" x="96" y="262" text-anchor="middle">(분당선) 1번 출구</text>
 
   <!-- 예식장 -->
-  <rect x="164" y="170" width="26" height="26" rx="6" fill="#b08968"/>
-  <text x="177" y="188" text-anchor="middle" style="fill:#fff;font-size:13px;font-weight:700">D</text>
-  <g>
-    <rect x="125" y="126" width="104" height="32" rx="8" fill="#fff" stroke="#b08968" stroke-width="1.4"/>
-    <path d="M170 158 L177 168 L184 158 Z" fill="#fff" stroke="#b08968" stroke-width="1.4" stroke-linejoin="round"/>
-    <rect x="168" y="156" width="18" height="3" fill="#fff"/>
-    <text x="177" y="140" text-anchor="middle" style="font-size:11px;font-weight:700">루이비스컨벤션</text>
-    <text x="177" y="152" text-anchor="middle" style="font-size:8px;fill:#8a7f78">H비즈니스파크 D동</text>
-  </g>
+  <rect x="352" y="318" width="52" height="52" rx="8" fill="#b08968"/>
+  <text class="nostroke" x="378" y="353" text-anchor="middle" style="font-size:26px;font-weight:700;fill:#fff;stroke:none">D동</text>
+  <rect x="336" y="222" width="176" height="62" rx="14" fill="#fff" stroke="#b08968" stroke-width="3"/>
+  <path d="M370 284 L384 314 L398 284 Z" fill="#fff" stroke="#b08968" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="368" y="281" width="32" height="6" fill="#fff"/>
+  <text class="nostroke" x="424" y="252" text-anchor="middle" style="font-size:26px;font-weight:700;stroke:none">루이비스컨벤션</text>
+  <text class="nostroke" x="424" y="274" text-anchor="middle" style="font-size:19px;fill:#8a7f78;stroke:none">H비즈니스파크 D동</text>
+
+  <!-- 주차장 입구 -->
+  <path d="M313 300 L331 334" stroke="#c0615a" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="338" cy="346" r="14" fill="#c0615a"/>
+  <text class="nostroke" x="338" y="353" text-anchor="middle" style="font-size:19px;font-weight:700;fill:#fff;stroke:none">P</text>
+  <text x="326" y="238" text-anchor="end" style="font-size:20px;font-weight:700;fill:#c0615a">C/D동</text>
+  <text x="326" y="260" text-anchor="end" style="font-size:20px;font-weight:700;fill:#c0615a">주차장</text>
+  <text x="326" y="282" text-anchor="end" style="font-size:20px;font-weight:700;fill:#c0615a">입구</text>
+
+  <!-- 문정역 4번 출구 + 셔틀 타는 곳 (4번 출구 바로 위 지상) -->
+  <rect x="540" y="124" width="116" height="34" rx="17" fill="#ffe14d"/>
+  <text class="nostroke" x="598" y="148" text-anchor="middle" style="font-size:22px;font-weight:700;stroke:none">셔틀 타는 곳</text>
+  <path d="M598 158 V168" stroke="#e0b800" stroke-width="3"/>
+  <rect x="577" y="168" width="42" height="46" rx="8" fill="#2b2522"/>
+  <rect x="583" y="175" width="30" height="16" rx="3" fill="#fff"/>
+  <circle cx="589" cy="202" r="3.5" fill="#fff"/><circle cx="607" cy="202" r="3.5" fill="#fff"/>
+  <path d="M598 214 V242" stroke="#d6006d" stroke-width="5" stroke-linecap="round"/>
+  <rect x="546" y="242" width="104" height="34" rx="17" fill="#fff" stroke="#d6006d" stroke-width="3"/>
+  <text class="nostroke" x="598" y="265" text-anchor="middle" style="font-size:21px;font-weight:700;fill:#d6006d;stroke:none">4번 출구</text>
+  <circle cx="680" cy="259" r="20" fill="#fff" stroke="#d6006d" stroke-width="5"/>
+  <text class="nostroke" x="680" y="268" text-anchor="middle" style="font-size:26px;font-weight:700;fill:#d6006d;stroke:none">8</text>
+  <text class="st" x="694" y="304" text-anchor="middle" style="fill:#d6006d">문정역</text>
+  <text class="lm" x="722" y="212" text-anchor="middle">1번 출구</text>
+
+  <!-- 장지역 -->
+  <circle cx="738" cy="458" r="17" fill="#fff" stroke="#d6006d" stroke-width="4"/>
+  <text class="nostroke" x="738" y="466" text-anchor="middle" style="font-size:22px;font-weight:700;fill:#d6006d;stroke:none">8</text>
+  <text class="st" x="738" y="500" text-anchor="middle" style="font-size:24px">장지역</text>
 
   <!-- 범례 -->
-  <g transform="translate(22 304)">
-    <path d="M0 0 H26" stroke="#b08968" stroke-width="2.8" stroke-dasharray="6 4" stroke-linecap="round"/>
-    <text x="34" y="3" style="font-size:8.5px">문정역 4번 출구 셔틀버스</text>
-    <path d="M150 0 H176" stroke="#3a3330" stroke-width="2.2" stroke-linecap="round"/>
-    <text x="184" y="3" style="font-size:8.5px">수서역 방면 도보·차량</text>
-  </g>
+  <path d="M34 574 H78" stroke="#7b3f8c" stroke-width="5" stroke-linecap="round"/>
+  <text class="lm" x="90" y="581" style="font-size:20px">이동 경로</text>
+
+  <!-- 문정역 4번 출구 안내 -->
+  <rect x="30" y="600" width="750" height="120" rx="18" fill="#fff" stroke="#e8dfd6" stroke-width="2"/>
+  <text class="nostroke" x="52" y="632" style="font-size:24px;font-weight:700;fill:#d6006d;stroke:none">문정역 4번 출구에서</text>
+  <rect x="52" y="644" width="92" height="30" rx="15" fill="#ffe14d"/>
+  <text class="nostroke" x="98" y="665" text-anchor="middle" style="font-size:19px;font-weight:700;stroke:none">셔틀 이용</text>
+  <text class="nostroke" x="158" y="666" style="font-size:21px;stroke:none">4번 출구 계단 → 지상 셔틀 타는 곳</text>
+  <rect x="52" y="682" width="92" height="30" rx="15" fill="#e8dfd6"/>
+  <text class="nostroke" x="98" y="703" text-anchor="middle" style="font-size:19px;font-weight:700;stroke:none">지하 보도</text>
+  <text class="nostroke" x="158" y="704" style="font-size:21px;stroke:none">지하 보도로 6분 (에스컬레이터 이용)</text>
 </svg>

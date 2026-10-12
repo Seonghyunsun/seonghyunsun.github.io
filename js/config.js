@@ -8,7 +8,6 @@ export const config = {
     name: "루이비스컨벤션 송파문정점",
     hall: "B1층",
     address: "서울특별시 송파구 법원로9길 26 H비즈니스파크 D동",
-    tel: "02-6281-9000",
     transport: [
       { title: "셔틀버스", lines: ["8호선 문정역 4번 출구 앞에서 10분 배차로 운행합니다."], warn: "수서역은 셔틀버스가 없습니다." },
       { title: "버스", sub: "문정로데오거리 하차", rows: [
