@@ -31,7 +31,7 @@ export function formatKoreanDate(d) {
   const h = Number(p.hour);
   const period = h < 12 ? "오전" : "오후";
   const h12 = h % 12 === 0 ? 12 : h % 12;
-  return `${p.year}년 ${p.month}월 ${p.day}일 ${p.weekday} ${period} ${h12}시 ${p.minute}분`;
+  return `${p.year}년 ${p.month.padStart(2, "0")}월 ${p.day.padStart(2, "0")}일 ${p.weekday} ${period} ${h12}시 ${p.minute}분`;
 }
 
 export function seoulYMD(d) {
