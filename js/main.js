@@ -164,7 +164,7 @@ document.addEventListener("rsvp:done", () => toast("참석 여부가 전달되�
 // ---- Account ----
 function renderAccount() {
   const block = (label, list) => `<details><summary>${label}</summary>${list.map((a) => `
-    <div class="acct"><span>${[a.bank, a.number].filter(Boolean).join(" ")}<br><small>${a.role}</small></span>
+    <div class="acct"><span>${[a.bank, a.number].filter(Boolean).join(" ")}<br><small>${a.role} ${a.name}</small></span>
     <button class="btn" data-copy="${a.number}">복사</button></div>`).join("")}</details>`;
   $("#account").innerHTML = `${title("Account", "마음 전하실 곳")}
     <p>전해주시는 따뜻한 축하의 마음을<br>오래도록 간직하여 행복하게 잘 살겠습니다.</p>

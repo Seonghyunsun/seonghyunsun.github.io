@@ -54,13 +54,13 @@ export const config = {
   ],
   accounts: {
     groom: [
-      { bank: "우리은행", number: "1002-452-957269", role: "신랑" },
-      { bank: "우리은행", number: "1002-452-965464", role: "어머니" },
+      { bank: "우리은행", number: "1002-452-957269", role: "신랑", name: "김민혁" },
+      { bank: "우리은행", number: "1002-452-965464", role: "어머니", name: "이경아" },
     ],
     bride: [
-      { bank: "카카오뱅크", number: "3333-29-5300712", role: "신부" },
-      { bank: "우리은행", number: "1002-139-926585", role: "아버지" },
-      { bank: "카카오뱅크", number: "3333-209-408910", role: "어머니" },
+      { bank: "카카오뱅크", number: "3333-29-5300712", role: "신부", name: "성현선" },
+      { bank: "우리은행", number: "1002-139-926585", role: "아버지", name: "성락준" },
+      { bank: "카카오뱅크", number: "3333-209-408910", role: "어머니", name: "조미숙" },
     ],
   },
   rsvpUrl: "https://script.google.com/macros/s/AKfycbxrs8PvDjwxBDEUM4sGUlGBi9Txuw91V95BUwwt0jDvso5ZNfXScIKJfODws7E5zqkdIQ/exec",
