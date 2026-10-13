@@ -53,8 +53,15 @@ export const config = {
     "images/gallery-22.jpg",
   ],
   accounts: {
-    groom: [{ bank: "우리은행", number: "1002-452-957269", holder: "김민혁" }],
-    bride: [{ bank: "카카오뱅크", number: "3333-29-5300712", holder: "성현선" }],
+    groom: [
+      { bank: "우리은행", number: "1002-452-957269", role: "신랑" },
+      { bank: "우리은행", number: "1002-452-965464", role: "어머니" },
+    ],
+    bride: [
+      { bank: "카카오뱅크", number: "3333-29-5300712", role: "신부" },
+      { bank: "우리은행", number: "1002-139-926585", role: "아버지" },
+      { bank: "카카오뱅크", number: "3333-209-408910", role: "어머니" },
+    ],
   },
   rsvpUrl: "https://script.google.com/macros/s/AKfycbxrs8PvDjwxBDEUM4sGUlGBi9Txuw91V95BUwwt0jDvso5ZNfXScIKJfODws7E5zqkdIQ/exec",
 };

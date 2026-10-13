@@ -164,10 +164,10 @@ document.addEventListener("rsvp:done", () => toast("참석 여부가 전달되�
 // ---- Account ----
 function renderAccount() {
   const block = (label, list) => `<details><summary>${label}</summary>${list.map((a) => `
-    <div class="acct"><span>${[a.bank, a.number].filter(Boolean).join(" ")}<br><small>예금주 ${a.holder}</small></span>
+    <div class="acct"><span>${[a.bank, a.number].filter(Boolean).join(" ")}<br><small>${a.role}</small></span>
     <button class="btn" data-copy="${a.number}">복사</button></div>`).join("")}</details>`;
   $("#account").innerHTML = `${title("Account", "마음 전하실 곳")}
-    <p>참석이 어려우신 분들은<br>축하의 마음을 전달해 주세요.</p>
+    <p>전해주시는 따뜻한 축하의 마음을<br>오래도록 간직하여 행복하게 잘 살겠습니다.</p>
     ${config.accounts.groom.length ? block("신랑측 계좌번호", config.accounts.groom) : ""}${config.accounts.bride.length ? block("신부측 계좌번호", config.accounts.bride) : ""}`;
   $("#account").addEventListener("click", async (e) => {
     const b = e.target.closest("[data-copy]");
