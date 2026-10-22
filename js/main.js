@@ -79,12 +79,19 @@ function renderGallery() {
   const urls = config.gallery;
   $("#gallery").innerHTML = `${title("Gallery", "갤러리")}
     <div class="grid">${urls.map((u, i) => `<button class="thumb" data-i="${i}" aria-label="사진 ${i + 1} 크게 보기"><img src="${u}" alt="" loading="lazy" draggable="false" onerror="this.closest('.thumb').style.visibility='hidden'"></button>`).join("")}</div>
+    <p class="g-count" id="g-count">1 / ${urls.length}</p>
     <div class="lightbox" id="lightbox" hidden>
       <button class="lb-close" aria-label="닫기">×</button>
       <button class="lb-prev" aria-label="이전">‹</button>
       <img id="lb-img" alt="" draggable="false">
       <button class="lb-next" aria-label="다음">›</button>
     </div>`;
+  const grid = $("#gallery .grid"), count = $("#g-count");
+  grid.addEventListener("scroll", () => {
+    const first = grid.querySelector(".thumb");
+    const step = first.offsetWidth + 6;
+    count.textContent = `${Math.min(urls.length, Math.round(grid.scrollLeft / step) + 1)} / ${urls.length}`;
+  }, { passive: true });
   const lb = $("#lightbox"), img = $("#lb-img");
   let cur = 0;
   const show = (i) => { cur = (i + urls.length) % urls.length; img.src = urls[cur]; };

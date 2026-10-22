@@ -22,7 +22,7 @@ body { margin: 0; background: #ece6df; color: var(--ink); font-family: "LeeSeoyu
 .btn { display: inline-block; border: 1px solid var(--accent); background: none; color: var(--accent); padding: 10px 22px; border-radius: 999px; font: inherit; font-size: 14px; cursor: pointer; text-decoration: none; }
 .btn.solid { background: var(--accent); color: #fff; }
 .btn[disabled] { opacity: .5; cursor: not-allowed; }
-.cal { width: 100%; border-collapse: collapse; margin: 0 auto 28px; }
+.cal { width: 100%; table-layout: fixed; border-collapse: collapse; margin: 0 auto 28px; }
 .cal th { font-weight: 400; font-size: 12px; color: var(--muted); padding: 6px 0; }
 .cal th:first-child, .cal td:first-child { color: #c0615a; }
 .cal td { padding: 8px 0; font-size: 15px; }
@@ -33,7 +33,10 @@ body { margin: 0; background: #ece6df; color: var(--ink); font-family: "LeeSeoyu
 .countdown span { font-size: 11px; color: var(--muted); letter-spacing: .1em; }
 .toast { position: fixed; left: 50%; bottom: 32px; transform: translate(-50%, 20px); background: rgba(40,34,30,.9); color: #fff; padding: 10px 20px; border-radius: 999px; font-size: 14px; opacity: 0; pointer-events: none; transition: .3s; z-index: 50; }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.grid { display: flex; gap: 6px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -28px; padding: 0 28px; scroll-padding: 0 28px; scrollbar-width: none; -webkit-overflow-scrolling: touch; touch-action: pan-x pan-y; }
+.grid::-webkit-scrollbar { display: none; }
+.grid .thumb { flex: 0 0 68%; aspect-ratio: 3 / 4; scroll-snap-align: start; }
+.g-count { margin: 14px 0 0; font-size: 13px; color: var(--muted); letter-spacing: .1em; }
 .thumb { padding: 0; border: 0; background: #e3d9ce; aspect-ratio: 1; cursor: pointer; overflow: hidden; }
 .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .lightbox { position: fixed; inset: 0; background: rgba(20,16,14,.94); z-index: 40; display: flex; align-items: center; justify-content: center; }
