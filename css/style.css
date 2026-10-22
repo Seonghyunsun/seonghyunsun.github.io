@@ -35,6 +35,8 @@ body { margin: 0; background: #ece6df; color: var(--ink); font-family: "LeeSeoyu
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 .grid { display: flex; gap: 6px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -28px; padding: 0 28px; scroll-padding: 0 28px; scrollbar-width: none; -webkit-overflow-scrolling: touch; touch-action: pan-x pan-y; }
 .grid::-webkit-scrollbar { display: none; }
+.grid { cursor: grab; }
+.grid.dragging { cursor: grabbing; scroll-snap-type: none; user-select: none; }
 .grid .thumb { flex: 0 0 68%; aspect-ratio: 3 / 4; scroll-snap-align: start; }
 .g-count { margin: 14px 0 0; font-size: 14px; color: var(--muted); letter-spacing: .1em; }
 .thumb { padding: 0; border: 0; background: #e3d9ce; aspect-ratio: 1; cursor: pointer; overflow: hidden; }

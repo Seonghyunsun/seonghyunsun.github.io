@@ -92,6 +92,33 @@ function renderGallery() {
     const step = first.offsetWidth + 6;
     count.textContent = `${Math.min(urls.length, Math.round(grid.scrollLeft / step) + 1)} / ${urls.length}`;
   }, { passive: true });
+  // 마우스: 휠을 가로 이동으로 바꾸고(양 끝에서는 페이지 스크롤), 드래그로도 넘긴다
+  grid.addEventListener("wheel", (e) => {
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+    const max = grid.scrollWidth - grid.clientWidth;
+    const next = grid.scrollLeft + e.deltaY;
+    if ((e.deltaY < 0 && grid.scrollLeft <= 0) || (e.deltaY > 0 && grid.scrollLeft >= max - 1)) return;
+    e.preventDefault();
+    grid.scrollLeft = Math.max(0, Math.min(max, next));
+  }, { passive: false });
+  let drag = null, moved = false;
+  grid.addEventListener("pointerdown", (e) => {
+    if (e.pointerType !== "mouse" || e.button !== 0) return;
+    drag = { x: e.clientX, left: grid.scrollLeft };
+    moved = false;
+  });
+  window.addEventListener("pointermove", (e) => {
+    if (!drag) return;
+    const dx = e.clientX - drag.x;
+    if (!moved && Math.abs(dx) > 5) { moved = true; grid.classList.add("dragging"); }
+    if (moved) grid.scrollLeft = drag.left - dx;
+  });
+  window.addEventListener("pointerup", () => {
+    if (!drag) return;
+    drag = null;
+    grid.classList.remove("dragging");
+  });
+  grid.addEventListener("click", (e) => { if (moved) { e.stopPropagation(); moved = false; } }, true);
   const lb = $("#lightbox"), img = $("#lb-img");
   let cur = 0;
   const show = (i) => { cur = (i + urls.length) % urls.length; img.src = urls[cur]; };
